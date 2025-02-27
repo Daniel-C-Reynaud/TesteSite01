@@ -1,0 +1,141 @@
+:root {
+   --base-clr: #202020;
+   --text-clr: #ffffff;
+   --hover-clr: #616161;
+   --line-clr: #2e2e2e;
+   --accent-clr: #ff5f5f;
+   --sec-text-clr: #949494;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+}
+
+html {
+   font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   line-height: 1.5rem;
+}
+
+body {
+   height: 100vh;
+   width: 100vw;
+   background-color: var(--base-clr);
+   color: var(--text-clr);
+   display: grid;
+   grid-template-columns: auto 1fr;
+}
+
+#side-bar > ul {
+   box-sizing: border-box;
+   width: 250px;
+   height: 98vh;
+   padding: 5px 1em;
+   background-color: var(--base-clr);
+   border-right: 1px solid var(--line-clr);
+   align-self: start;
+
+   position: sticky;
+   top: 0;
+}
+
+#side-bar ul {
+   list-style: none;
+}
+
+#side-bar > ul > li:first-child {
+   display: flex;
+   justify-content: start;
+   margin-bottom: 15px;
+   border-bottom: 2px solid var(--line-clr);
+   .logo {
+      font-weight: 600;
+   };
+}
+
+#side-bar ul li.active a {
+   color: var(--accent-clr);
+   img {
+      fill: var(--accent-clr);
+   }
+}
+
+#side-bar a, #side-bar .drop-down, #side-bar .logo {
+   border-radius: 0.5em;
+   padding: 0.85em;
+   text-decoration: none;
+   color: var(--text-clr);
+   display: flex;
+   align-items: center;
+   gap: 1em;
+}
+
+.drop-down {
+   width: 100%;
+   background: none;
+   border: none;
+   font: inherit;
+   cursor: pointer;
+   text-align: left;
+}
+
+main {
+   margin: auto;
+   display: flex;
+   width: 90%;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+   align-content: center;
+}
+
+main p {
+   color: var(--sec-text-clr);
+}
+
+.container {
+   margin: 10px;;
+   flex: 1 1 200px;
+   width: 200px;
+   height: 300px;
+   border: 2px solid var(--line-clr);
+   border-radius: 1em;
+   padding: min(3em, 15%);
+}
+
+#side-bar svg {
+   flex-shrink: 0;
+   fill: var(--text-clr);
+}
+
+#side-bar a span, #side-bar .drop-down span {
+   flex-grow: 1;
+}
+
+#side-bar a:hover {
+   background-color: var(--hover-clr);
+}
+
+
+#side-bar .sub-menu a:hover {
+   color: var(--text-clr);
+}
+
+#side-bar .drop-down:hover {
+   background-color: var(--hover-clr);
+}
+
+#side-bar .sub-menu {
+   overflow: hidden;
+   height: 0;
+   transition: 0.3s ease-in-out;
+   border-bottom: none;
+}
+
+#side-bar .sub-menu a {
+   color: var(--sec-text-clr);
+}
+
+#side-bar .sub-menu.show {
+   height: 180px;
+}
