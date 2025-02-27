@@ -61,6 +61,7 @@ body {
 }
 
 #side-bar a, #side-bar .drop-down, #side-bar .logo {
+   user-select: none;
    border-radius: 0.5em;
    padding: 0.85em;
    text-decoration: none;
